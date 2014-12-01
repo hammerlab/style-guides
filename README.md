@@ -1,4 +1,4 @@
-style-guides
-============
+Hammerlab Style-Guides
+======================
 
-Guidelines of the Hammerlab
+Guidelines for programming languages, git workflows, etc.
