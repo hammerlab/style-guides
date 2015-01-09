@@ -33,11 +33,11 @@ Avoid exceptions as much as possible:
 
 Don't *haskell*:
 
-- Avoid defining infix operators as much as possible
-(and try to delimit them with `Meaning_full_module_name.( … )`).
+- Avoid defining infix operators as much as possible (and try to delimit them
+  with `Meaning_full_module_name.( … )`).
 - The number of characters in an identifier should match its scope; it's
-programming not a math paper.
-- Type hackery is cool when it brings safety/readability not just for fun.
+  programming not a math paper.
+- Type hackery is cool when it brings safety/readability but not just for fun.
 
 ### A Project
 
@@ -49,9 +49,9 @@ Start with one single file like there:
 Then, the projects grows:
 
 - Everything should be in a **library**; without module initializations (most
-important: no side effects or C-stub calls when a module loads; prefer `init`
-functions if needed).
-- An application is a `main.ml` file that parses the command line (and/or
+  important: no side effects or C-stub calls when a module loads; prefer `init`
+  functions if needed).
+- An application is a `main.ml` file that just parses the command line (and/or
   environment variables) and calls library functions (and that's all).
 
 Bigg-ish projects should look like:
@@ -68,7 +68,7 @@ Bigg-ish projects should look like:
  |  \__ test/
 ```
 
-Smaller projects (one-module-libraries) can sure be more “flat.”
+Smaller projects (like one-module-libraries) can of course be more “flat.”
 
 When a module can be extracted from a library, it should become it's own
 library (at the “package level”).
@@ -78,17 +78,17 @@ library (at the “package level”).
 For reading, and using:
 
 - Everything [by D. Bünzli](http://erratique.ch/software) (except sometimes the
-naming of the libraries/modules …).
+  naming of the libraries/modules …).
 - The
-[Cohttp](https://github.com/mirage/ocaml-cohttp/)/[Conduit](https://github.com/mirage/ocaml-conduit)
-family (with Lwt).
+  [Cohttp](https://github.com/mirage/ocaml-cohttp/)/[Conduit](https://github.com/mirage/ocaml-conduit)
+  family (with Lwt).
 - [`mirleft/ocaml-tls`](https://github.com/mirleft/ocaml-tls),
-[`c-cube/cconv`](https://github.com/c-cube/cconv),
-[`ocamllabs/ocaml-ctypes`](https://github.com/ocamllabs/ocaml-ctypes).
+  [`c-cube/cconv`](https://github.com/c-cube/cconv),
+  [`ocamllabs/ocaml-ctypes`](https://github.com/ocamllabs/ocaml-ctypes).
 
 ### Toxic Stuff
 
-- Big non-portable blobs like `Core_kernel`, `Async`.
+- Big non-portable blobs like `Core_kernel` and its dependencies.
 - Camlp4.
 - `Obj.magic`, or `%identity` used as `extern` (which are the same).
 
