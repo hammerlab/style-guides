@@ -16,6 +16,8 @@ A type should be called `t` inside its module. Most functions inside that
 module should have the value of type `t` as first argument, and use labels for
 (all) the other ones.
 
+Give, if possible, meaningful names to type variables,
+e.g. `('ok, 'error) Result.t`.
 
 Typography:
 
